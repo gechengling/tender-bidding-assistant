@@ -1,8 +1,8 @@
 ---
 name: "Enterprise Bid Document AI — 企业招投标文书AI助手"
 slug: tender-bidding-assistant
-version: "3.0.0"
-description: "AI-powered enterprise bidding assistant — generates professional bid documents for government procurement and commercial projects. Covers full bid lifecycle with 2026 regulatory updates: AI-assisted compliance, electronic guarantees, green procurement scoring, abnormal price red lines, and SME preference policies. Built for Chinese B2B bidding professionals."
+version: "3.1.0"
+description: "AI-powered enterprise bidding assistant for China government procurement and commercial projects. Full-lifecycle support: bid document analysis, strategy, drafting, compliance audit, and post-bid follow-up. Updated for 2026 regulatory changes. ⚠️ IMPORTANT: This skill may process bid documents containing confidential business information. Users must sanitize sensitive data before upload and review their organization's data handling policies."
 author: gechengling
 license: MIT
 agent_created: true
@@ -14,47 +14,43 @@ allowed-tools:
   - WebSearch
   - WebFetch
 tags:
-  - tender
-  - bid
-  - procurement
+  - tender-document
+  - bid-document
+  - procurement-bid
   - government-procurement
   - bidding-documents
-  - compliance
-  - AI-compliance
-  - 招标
-  - 投标
-  - 标书
-  - 技术标
-  - 商务标
-  - 政府采购
-  - 电子招投标
+  - compliance-audit
+  - 招标文件
+  - 投标文件
+  - 政府采购投标
+  - 招投标
 triggers:
-  - "tender"
-  - "bid"
-  - "bidding"
-  - "procurement"
-  - "RFP"
-  - "RFQ"
-  - "招标"
-  - "投标"
-  - "标书"
-  - "商务标"
-  - "技术标"
-  - "评分标准"
-  - "资格预审"
-  - "联合体"
-  - "保证金"
-  - "中标"
-  - "废标"
-  - "招标代理"
-  - "竞争性谈判"
-  - "综合评分法"
-  - "最低价中标"
-  - "开标"
-  - "评标"
-  - "定标"
-  - "履约保证金"
-  - "电子保函"
+  # English — specific phrases only, avoid accidental trigger on generic "bid"/"tender"/"procurement"
+  - "tender document"
+  - "bid document"
+  - "bidding strategy"
+  - "RFP analysis"
+  - "RFQ response"
+  - "government procurement bid"
+  - "bid compliance audit"
+  - "tender bid analysis"
+  - "bidding document review"
+  - "procurement bidding strategy"
+  # Chinese — specific phrases, avoid single/short words that appear in normal conversation
+  - "招标文件解析"
+  - "投标文件制作"
+  - "投标策略制定"
+  - "招投标合规自查"
+  - "政府采购投标"
+  - "招标评分标准分析"
+  - "投标报价策略"
+  - "废标风险自查"
+  - "开标后跟进"
+  - "投标质疑函"
+  - "电子招投标"
+  - "异常低价说明"
+  - "电子保函方案"
+  - "绿色采购评分"
 ---
 
 # Enterprise Bid Document AI / 企业招投标文书AI助手
@@ -65,7 +61,24 @@ triggers:
 
 ---
 
-## ⚡ 2026年核心新政速览（v3.0新增）
+## ⚠️ 使用前必读：数据安全与保密声明
+
+> **重要提醒：** 本 Skill 在处理招投标文件时，可能会对上传的文档内容进行读取、分析和处理。招投标文件通常包含**商业秘密、报价信息、技术方案、客户数据**等高度敏感内容。
+>
+> **使用前请务必：**
+> 1. **脱敏处理**：上传前移除或替换所有敏感信息（具体报价、客户名称、核心技术参数、人员身份信息）
+> 2. **授权确认**：确保你有权限将相关文件内容用于 AI 分析
+> 3. **合规审查**：确认贵组织的数据安全政策允许使用第三方 AI 工具处理相关业务文件
+> 4. **结果验证**：本 Skill 生成的所有内容仅供参考，最终投标决策须由具备资质的专业人员独立审核确认
+>
+> **数据处理说明：**
+> - 本 Skill 通过 ClawHub 平台运行，文档处理过程遵循 ClawHub 的数据安全规范
+> - 不保证上传文档会被自动删除或匿名化处理
+> - 建议对极敏感项目采用离线分析或仅提供脱敏后的摘要信息
+
+---
+
+## ⚡ 2026年核心新政速览（v3.1新增）
 
 本版本全面纳入以下2026年招投标领域重大政策变化：
 
@@ -526,7 +539,7 @@ Step 5: 开标后跟进 → 澄清 / 数字人答辩 / 合同AI审查 / 质疑
 
 ---
 
-*Enterprise Bid Document AI v3.0.0 | Author: gechengling | License: MIT*  
+*Enterprise Bid Document AI v3.1.0 | Author: gechengling | License: MIT*  
 *ClawHub: https://clawhub.ai/gechengling/tender-bidding-assistant*  
 *GitHub: https://github.com/gechengling/tender-bidding-assistant*
 
@@ -536,13 +549,19 @@ Step 5: 开标后跟进 → 澄清 / 数字人答辩 / 合同AI审查 / 质疑
 
 **Enterprise Bid Document AI** is a full-lifecycle bidding assistant updated for 2026 China regulatory changes. It covers government procurement and commercial project bidding end-to-end, with special attention to the eight major 2026 policy shifts affecting how bids are evaluated and scored.
 
-### What's New in v3.0.0
-- ⚖️ 2026 Bidding Law amendments — composite evaluation as default, price weight capped at 40-50% for services
-- 🚨 Abnormal low-price red lines — automatic cost proof generation for bids below 45% of ceiling
-- 🤖 AI compliance pre-audit — electronic file machine code/IP/MAC isolation checks
-- 🌱 Green procurement scoring — carbon/ESG indicators now mandatory evaluation criteria
-- 🛡️ Electronic guarantee — e-guarantee replacing cash deposits, platform integration guide
-- 🏢 SME preference — automatic 6-10% price deduction calculation, joint venture optimization
+### What's New in v3.1.0
+- ⚠️ **Security & Data Warnings added** — explicit notice that bid documents may contain confidential information; users must sanitize sensitive data before upload
+- 🔒 **Trigger refinement** — English/Chinese triggers made more specific to avoid accidental invocation on generic conversation
+- 📋 **Compliance boundary strengthened** — clearer rejection of bid-rigging, document forgery, and policy-violating assistance
+
+### ⚠️ Security & Data Warning
+
+Before using this skill, please read carefully:
+
+- **Bid documents are confidential.** Uploaded files may contain pricing, technical proposals, and business-sensitive content.
+- **Sanitize before upload.** Remove or redact sensitive data (specific prices, client names, core technical parameters, personnel identity information) before submitting documents for analysis.
+- **No guaranteed deletion.** Uploaded documents are not guaranteed to be automatically deleted or anonymized after processing.
+- **Your responsibility.** You are responsible for ensuring your organization's data security policies allow using third-party AI tools for business document analysis.
 
 ### Quick Start
 ```bash
@@ -558,8 +577,24 @@ npx clawhub install tender-bidding-assistant
 ```
 
 **Install**: `npx clawhub install tender-bidding-assistant`  
-**Author**: gechengling | **Version**: 3.0.0 | **License**: MIT
+**Author**: gechengling | **Version**: 3.1.0 | **License**: MIT
 
 ## Security & Compliance
 
-This skill uses `allowed-tools: [Bash, Read, Write, Glob, WebSearch, WebFetch]` to analyze bid documents, generate templates, search for regulatory updates, and fetch reference materials. All generated content is for reference only — final bid documents must be reviewed by qualified professionals. This skill does NOT facilitate bid rigging, document forgery, or any activity violating China's Bidding Law or Government Procurement Law.
+**⚠️ Data Processing Warning:** This skill may read and process bid documents you upload or paste into the conversation. Bid documents typically contain **confidential business information** including pricing, technical proposals, client data, and strategic content. By using this skill, you acknowledge that such content may be processed by the AI model.
+
+**User Responsibilities:**
+- **Sanitize before use:** Remove or redact sensitive data (specific prices, client names, core technical parameters, personnel identity information) before submitting any document for analysis.
+- **Authorization:** Ensure you have permission to use the relevant document content for AI-assisted analysis.
+- **Compliance:** Confirm your organization's data security policy allows using third-party AI tools for business document analysis.
+- **No guaranteed deletion:** Uploaded documents are not guaranteed to be automatically deleted or anonymized after processing.
+
+**What this skill does NOT do:**
+- Does NOT facilitate bid-rigging, collusion, or any form of corruption.
+- Does NOT assist in forging certificates, falsifying performance records, or creating fake qualifications.
+- Does NOT provide strategies to evade AI-based collusion detection (machine code/IP/MAC address manipulation).
+- Does NOT generate technical proposals with substantially similar content to other bidders.
+
+**Allowed Tools:** `Bash, Read, Write, Glob, WebSearch, WebFetch` — used to analyze bid documents, generate templates, search regulatory updates, and fetch reference materials. All generated content is for reference only — final bid documents must be reviewed by qualified professionals.
+
+**Legal Basis:** China's Bidding Law (招标投标法), Government Procurement Law (政府采购法) with 2026 amendments, NDRC AI Implementation Guidelines (发改法规〔2026〕195号). AI is an assistive tool only; it does not replace the independent judgment and legal responsibility of bidders, bid-evaluation experts, or procuring entities.
