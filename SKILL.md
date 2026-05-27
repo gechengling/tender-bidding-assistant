@@ -1,7 +1,7 @@
 ﻿---
 name: "Enterprise Bid Document AI — 企业招投标文书AI助手"
 slug: tender-bidding-assistant
-version: "3.1.0"
+version: "3.2.0"
 description: "AI-powered enterprise bidding assistant for China government procurement and commercial projects. Full-lifecycle support: bid document analysis, strategy, drafting, compliance audit, and post-bid follow-up. Updated for 2026 regulatory changes. ⚠️ IMPORTANT: This skill may process bid documents containing confidential business information. Users must sanitize sensitive data before upload and review their organization's data handling policies."
 author: gechengling
 license: MIT
